@@ -21,14 +21,15 @@ export class TimelineComponent implements OnInit {
   ) {}
 
   onSearchChange(value: any): void {
-    console.log(value);
-    const findValue = this.originalEventsList.filter((x) =>
-      x.Name.toLowerCase().includes(value),
-    );
-    if (findValue?.length > 0) {
-      this.events = [...findValue];
-    } else {
-      this.events = this.originalEventsList;
+    if (value?.data) {
+      const findValue = this.originalEventsList.filter((x) =>
+        x.Name.toLowerCase().includes(value?.data.toLowerCase()),
+      );
+      if (findValue?.length > 0) {
+        this.events = [...findValue];
+      } else {
+        this.events = this.originalEventsList;
+      }
     }
   }
 
