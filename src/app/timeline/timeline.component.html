@@ -1,0 +1,25 @@
+<div class="header-content">
+    <h2 class="header-text">Timeline Voyage</h2>
+    <div class="filter-search-events">
+        <input placeholder="Search by Name" type="text" (input)="onSearchChange($event)" />
+    </div>
+</div>
+<ul class="stepper stepper-horizontal">
+    <li class="completed" *ngFor="let step of events"
+    (click)="tabClick($event, step)" [ngClass]="{'active-menu-tab': step.Id === selectedTabIndex}">
+        <span class="circle">{{step.Id}}</span>
+        <span class="step-label product-body-2">{{step.Name}}</span>        
+    </li>
+</ul>
+
+<mat-card class="example-card" *ngIf="showCard" (click)="cardClick()">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{selectedEvent.Name}}</mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+    <img mat-card-sm-image src="{{selectedEvent.ThumbnailImgUrl}}" ><br>
+      {{selectedEvent.Description}}
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,6 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.event-details-popup {
+  margin: auto;
+  background: white;
+}

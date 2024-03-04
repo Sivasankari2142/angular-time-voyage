@@ -1,0 +1,11 @@
+<mat-dialog-content>
+    <div class="event-details-popup">
+        <div class="header-content">
+            <h1 class="name-text">{{data.Name}}</h1>
+            <span (click)="closeMenu()" class="cancel-text">X</span>
+        </div>
+        <img src="{{data.ImageURL}}" />
+        <p>{{data.Description}}</p>
+        <a href="{{data.VideoURL}}">Click here to watch video about {{data.Name}}</a>
+    </div>
+</mat-dialog-content>
